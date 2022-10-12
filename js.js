@@ -12,9 +12,6 @@ let popupAddBtn // przycisk "zatwierdź" w popupie
 let popupCloseBtn// przycisk "anuluj" w popupie
 
 
-
-let number = 3
-
 const main = () => {
     prepareDOMElements()
     prepareDOMEvents()
@@ -129,9 +126,6 @@ const enterKeyCheck = (e) => {
         addNewTodo()
     }
 }
-
-
-    
 
 document.addEventListener('DOMContentLoaded', main)
 
