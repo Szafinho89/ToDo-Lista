@@ -2,7 +2,6 @@ let todoInput   // miejsce gdzie uzytkownik wpisuje tresc zadania
 let errorInfo   // info o braku zadań/ koniecznosci wpisania tekstu
 let addBtn      // przycisk ADD - dodaje nowe elementy do listy
 let ulList      // lista zadan, tagi UL
-let newTodo
 
 let popup       //popup
 let popupInfo   // tekst w popupie, jak sie doda pusty tekst
@@ -42,9 +41,9 @@ const prepareDOMEvents = () => {
 const addNewTodo = () => {
     if (todoInput.value !== '') {
     
-        newTodo = document.createElement('li')
+        const newTodo = document.createElement('li')
         newTodo.textContent= todoInput.value
-        createToolsArea()
+        createToolsArea(newTodo)
 
         ulList.append(newTodo)
 
@@ -53,12 +52,11 @@ const addNewTodo = () => {
 
         todoInput.value= ''
         errorInfo.textContent= ''
-        console.log(ulList);
 
     } else errorInfo.textContent = 'Podaj treść zadania'
 }
 
-const createToolsArea = () => {
+const createToolsArea = (newTodo) => {
     let toolsPanel = document.createElement('div')
     toolsPanel.classList.add('tools')
     newTodo.append(toolsPanel)
